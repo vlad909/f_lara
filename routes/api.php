@@ -17,11 +17,9 @@ use  \App\Task;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/tasks', function () {
-//    $tasks = Task::orderBy('created_at', 'asc')->get();
-    return response()->json(Task::orderBy('created_at', 'asc')->get());
-});
-Route::post('/task', function (Request $request) {
+Route::get('/tasks', 'dataOfTasks@info');
+Route::post('/task', 'dataOfTasks@add'
+//    function (Request $request) {
 //    $validator = Validator::make($request->all(),
 //        ['name' => 'requiered|max:255']);
 //    if ($validator->fails()) {
@@ -34,16 +32,16 @@ Route::post('/task', function (Request $request) {
 //    $task->name = $request->name;
 //    $task->save();
 
-    return response()->json(Task::query()->create($request->all()));
-
-});
+//    return response()->json(Task::query()->create($request->all()));}
+);
 Route::delete('/task/{task}', function (Task $task) {
     return response()->json($task->delete());
 });
-Route::put('/task/{task}', function (Task $task, Request $request) {
+Route::put('/task/{task}', 'dataOfTasks@change'
+//    function (Task $task, Request $request){
 //    $name = $request->get();
-    return response()->json($task->update($request->all()));
-});
+//    return response()->json($task->update($request->all()));}}
+);
 //Route::delete('/task/{id}', function ($id) {
 //    return response()->json(Task::findOrFail($id)->delete());
 //});
