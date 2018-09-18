@@ -17,6 +17,7 @@ use  \App\Task;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::get('/tasks', 'dataOfTasks@info');
 Route::post('/task', 'dataOfTasks@add'
 //    function (Request $request) {
