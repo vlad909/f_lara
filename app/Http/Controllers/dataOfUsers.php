@@ -17,6 +17,7 @@ class dataOfUsers extends Controller
 
     public function add(Request $request)
     {
+
         return response()->json(User::query()->create($request->all()));
     }
 
