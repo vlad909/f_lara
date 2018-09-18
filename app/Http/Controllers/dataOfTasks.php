@@ -21,4 +21,21 @@ class dataOfTasks extends Controller
     {
         return response()->json($task->update($request->all()));
     }
+
+    public function delete(Task $task)
+    {
+        return response()->json($task->delete());
+    }
+
+    public function findq()
+    {
+        $tasks = Task::where('id_author', $_GET['id_author'])->get();
+//        $fin = (object) array("tasks" => $tasks, 'count' => $tasks->count());
+//        dd(Task::find((integer)$_GET['id']));
+        return response()->json((object) array("tasks" => $tasks, 'count' => $tasks->count()));
+//        $filter = Task::filter(function ($value){
+//            return $value.id_author == $id;
+//        });
+//        return response()->json($filter);
+    }
 }

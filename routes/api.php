@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use  \App\Task;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/tasks', 'dataOfTasks@info');
+Route::get('/task', 'dataOfTasks@findq');
 Route::post('/task', 'dataOfTasks@add'
 //    function (Request $request) {
 //    $validator = Validator::make($request->all(),
@@ -35,9 +34,7 @@ Route::post('/task', 'dataOfTasks@add'
 
 //    return response()->json(Task::query()->create($request->all()));}
 );
-Route::delete('/task/{task}', function (Task $task) {
-    return response()->json($task->delete());
-});
+Route::delete('/task/{task}', 'dataOfTasks@delete');
 Route::put('/task/{task}', 'dataOfTasks@change'
 //    function (Task $task, Request $request){
 //    $name = $request->get();
@@ -50,3 +47,6 @@ Route::put('/task/{task}', 'dataOfTasks@change'
 ////    $name = $request->get();
 //    return response()->json(Task::where('id', $id)->update($request->all()));
 //});
+Route::get('/users', 'dataOfUsers@info');
+Route::post('/users', 'dataOfUsers@store');
+Route::post('/login', 'SessionController@login');
