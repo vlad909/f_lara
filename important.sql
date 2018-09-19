@@ -57,35 +57,5 @@ INSERT INTO `users` (`id`, `f_name`, `l_name`, `created_at`, `updated_at`, `emai
 (18,	'wat',	'fsdbcv',	'2018-09-18 11:27:57',	'2018-09-18 11:27:57',	'vlad@vlad.ru',	'$2y$10$y553HNHeuKOxIs4tOqNYUeN9o/.e7kmdmzJVuaJGU93LUs5zQdfjO'),
 (19,	'ukraine',	'ukraineukraine',	'2018-09-18 11:28:29',	'2018-09-18 11:28:29',	'ukraine@ukraine.ukraine',	'$2y$10$GtPpjnZl1bHMLZNse7mE.efeH0NOzU7VmAEISu5K81YFGEptHW6Gi'),
 (20,	'olga',	'buzova',	'2018-09-18 11:29:44',	'2018-09-18 11:29:44',	'olga@olga.olga',	'$2y$10$Bt0phlpZsHlAXv5dSDDijOmK2uFgNaN439XsM5dlTesenqq7Zmoey');
-$cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server   = $cleardb_url["host"];
-$cleardb_username = $cleardb_url["user"];
-$cleardb_password = $cleardb_url["pass"];
-$cleardb_db       = substr($cleardb_url["path"],1);
-
-$active_group = 'default';
-$query_builder = TRUE;
-
-$db['default'] = array(
-    'dsn'   => '',
-    'hostname' => $cleardb_server,
-    'username' => $cleardb_username,
-    'password' => $cleardb_password,
-    'database' => $cleardb_db,
-    'dbdriver' => 'mysqli',
-    'dbprefix' => '',
-    'pconnect' => FALSE,
-    'db_debug' => (ENVIRONMENT !== 'production'),
-    'cache_on' => FALSE,
-    'cachedir' => '',
-    'char_set' => 'utf8',
-    'dbcollat' => 'utf8_general_ci',
-    'swap_pre' => '',
-    'encrypt' => FALSE,
-    'compress' => FALSE,
-    'stricton' => FALSE,
-    'failover' => array(),
-    'save_queries' => TRUE
-);
 
 -- 2018-09-19 08:30:08
