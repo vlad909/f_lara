@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/tasks', 'dataOfTasks@info');
+Route::get('/tasks/{id}', 'dataOfTasks@storeID');
+Route::delete('/tasks/{id}', 'dataOfTasks@deleteAllStoresById');
 Route::get('/task', 'dataOfTasks@findq');
 Route::post('/task', 'dataOfTasks@add'
 //    function (Request $request) {
