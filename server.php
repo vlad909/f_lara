@@ -10,11 +10,11 @@
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
-$cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server   = $cleardb_url["host"];
-$cleardb_username = $cleardb_url["user"];
-$cleardb_password = $cleardb_url["pass"];
-$cleardb_db       = substr($cleardb_url["path"],1);
+$cleardb_url      = parse_url(getenv("mysql://bb0d02f5291e7b:08e0da38@us-cdbr-iron-east-01.cleardb.net/heroku_97b8078c6c2dcde?reconnect=true"));
+$cleardb_server   = $cleardb_url["us-cdbr-iron-east-01.cleardb.net"];
+$cleardb_username = $cleardb_url["bb0d02f5291e7b"];
+$cleardb_password = $cleardb_url["08e0da38"];
+$cleardb_db       = substr($cleardb_url["heroku_97b8078c6c2dcde"],1);
 
 $active_group = 'default';
 $query_builder = TRUE;
