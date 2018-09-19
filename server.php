@@ -10,6 +10,7 @@
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
+
 $cleardb_url      = parse_url(getenv("mysql://bb0d02f5291e7b:08e0da38@us-cdbr-iron-east-01.cleardb.net/heroku_97b8078c6c2dcde?reconnect=true"));
 $cleardb_server   = $cleardb_url["us-cdbr-iron-east-01.cleardb.net"];
 $cleardb_username = $cleardb_url["bb0d02f5291e7b"];
