@@ -19,7 +19,8 @@ class dataOfTasks extends Controller
 
     public function deleteAllStoresById($id)
     {
-        return (response()->json(Task::where('id_author', 111)->delete()));
+        Task::where('id_author', $id)->delete();
+        return response()->json(['message' => Task::findOrFail($id)]);
     }
 
     public function add(Request $request)
